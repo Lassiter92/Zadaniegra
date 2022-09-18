@@ -6,7 +6,9 @@ namespace Zadaniegra
     {
         static void Main(string[] args)
         {
-            Hero hero = new Hero();
+            Warrior warrior = new Warrior();
+            Mage mage = new Mage();
+            Hero hero = new Hero("Sekiro", 30, 70);
         }
     }
 }

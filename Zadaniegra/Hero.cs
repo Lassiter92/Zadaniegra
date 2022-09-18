@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Zadaniegra
 {
-    internal class Hero
+    class Hero
     {
         private string name;
         private int hp;
@@ -54,21 +54,16 @@ namespace Zadaniegra
             return ap;
         }
 
-        public Hero()
-        {
-            setName("Geralt");
-            setHp(100);
-            setStrength(50);
-            Console.WriteLine($"{getName()} {getHp()} {getStrength()}");
-        }
+        public Hero() { }
 
         public Hero(string name, int hp, int strength)
         {
             this.name = name;
             this.hp = hp;
             this.strength = strength;
-            Console.WriteLine($"{name} {hp} {strength}");
+            Console.WriteLine($"Imie: {name}, Punkty życia: {hp}, Siła: {strength}");
         }
+
 
         public Hero(string name, int hp, int strength, int ap)
         {
@@ -78,6 +73,28 @@ namespace Zadaniegra
             this.ap = ap;
             Console.WriteLine($"{name} {hp} {strength}");
         }
-        
+
+    }
+    class Warrior : Hero
+    {
+        public Warrior()
+        {
+            setName("Geralt");
+            setHp(100);
+            setStrength(50);
+            Console.WriteLine($"Imie: {getName()}, Punkty życia: {getHp()}, Siła: {getStrength()}");
+        }
+    }
+
+    class Mage : Hero
+    {
+        public Mage()
+        {
+            setName("Xardas");
+            setHp(100);
+            setStrength(20);
+            setAp(40);
+            Console.WriteLine($"Imie: {getName()}, Punkty życia: {getHp()}, Siła: {getStrength()}, Moc magiczna {getAp()}");
+        }
     }
 }
