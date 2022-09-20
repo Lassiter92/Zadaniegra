@@ -14,45 +14,55 @@ namespace Zadaniegra
         private int strength;
         private int ap;
 
-        public void setName(string name)
+        public void SetName(string name)
         {
             this.name = name;
         }
 
-        public string getName()
+        public string GetName()
         {
             return name;
         }
         
-        public void setHp(int hp)
+        public void SetHp(int hp)
         {
             this.hp = hp;
+            if(hp > 100)
+            {
+                hp = 100;
+            }else if(hp < 0)
+            {
+                hp = 1;
+            }
+
+            
         }
 
-        public int getHp()
+        public int GetHp()
         {
             return hp;
         }
 
-        public void setStrength(int strength)
+        public void SetStrength(int strength)
         {
             this.strength = strength;
         }
 
-        public int getStrength()
+        public int GetStrength()
         {
             return strength;
         }
 
-        public void setAp(int ap)
+        public void SetAp(int ap)
         {
             this.ap = ap;
         }
 
-        public int getAp()
+        public int GetAp()
         {
             return ap;
         }
+
 
         public Hero() { }
 
@@ -74,15 +84,26 @@ namespace Zadaniegra
             Console.WriteLine($"{name} {hp} {strength}");
         }
 
+        public void leczenie(int leczenie)
+        {
+            int wyleczone = GetHp() + leczenie;
+            SetHp(wyleczone);
+        }
+
+        public void obrazenia(int obrazenia)
+        {
+            int otrzymaneObrazenia = GetHp() - obrazenia;
+            SetHp(otrzymaneObrazenia);
+        }
     }
     class Warrior : Hero
     {
         public Warrior()
         {
-            setName("Geralt");
-            setHp(100);
-            setStrength(50);
-            Console.WriteLine($"Imie: {getName()}, Punkty życia: {getHp()}, Siła: {getStrength()}");
+            SetName("Geralt");
+            SetHp(100);
+            SetStrength(50);
+            Console.WriteLine($"Imie: {GetName()}, Punkty życia: {GetHp()}, Siła: {GetStrength()}");
         }
     }
 
@@ -90,11 +111,12 @@ namespace Zadaniegra
     {
         public Mage()
         {
-            setName("Xardas");
-            setHp(100);
-            setStrength(20);
-            setAp(40);
-            Console.WriteLine($"Imie: {getName()}, Punkty życia: {getHp()}, Siła: {getStrength()}, Moc magiczna {getAp()}");
+            SetName("Xardas");
+            SetHp(100);
+            SetStrength(20);
+            SetAp(40);
+            Console.WriteLine($"Imie: {GetName()}, Punkty życia: {GetHp()}, Siła: {GetStrength()}, Moc magiczna {GetAp()}");
         }
     }
+
 }

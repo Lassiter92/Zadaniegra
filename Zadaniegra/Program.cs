@@ -8,7 +8,8 @@ namespace Zadaniegra
         {
             Warrior warrior = new Warrior();
             Mage mage = new Mage();
-            Hero hero = new Hero("Sekiro", 30, 70);
+            Hero hero = new Hero("Sekiro", 120, 70);
+
         }
     }
 }
