@@ -18,7 +18,6 @@
             get { return hp; }
             set
             {
-                hp = value;
                 if (hp > 100)
                 {
                     hp = 100;
@@ -27,6 +26,7 @@
                 {
                     hp = 0;
                 }
+                hp = value;
             }
         }
 
