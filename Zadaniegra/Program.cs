@@ -8,7 +8,12 @@ namespace Zadaniegra
         {
             Warrior warrior = new Warrior();
             Mage mage = new Mage();
-            Hero hero = new Hero("Sekiro", 120, 70);
+            Hero hero = new Hero("Sekiro", 100, 70);
+
+            hero.Obrazenia(40);
+            warrior.Obrazenia(7);
+            Console.WriteLine(hero.Hp);
+            Console.WriteLine(warrior.Hp);
 
         }
     }

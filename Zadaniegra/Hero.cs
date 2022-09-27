@@ -1,69 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
-
-namespace Zadaniegra
+﻿namespace Zadaniegra
 {
-    class Hero
+    public class Hero
     {
         private string name;
         private int hp;
         private int strength;
         private int ap;
 
-        public void SetName(string name)
+        public string Name
         {
-            this.name = name;
+            get { return name; }
+            set { name = value; }
         }
 
-        public string GetName()
+        public int Hp
         {
-            return name;
-        }
-        
-        public void SetHp(int hp)
-        {
-            this.hp = hp;
-            if(hp > 100)
+            get { return hp; }
+            set
             {
-                hp = 100;
-            }else if(hp < 0)
-            {
-                hp = 1;
+                hp = value;
+                if (hp > 100)
+                {
+                    hp = 100;
+                }
+                if (hp < 0)
+                {
+                    hp = 0;
+                }
             }
-
-            
         }
 
-        public int GetHp()
+        public int Strength
         {
-            return hp;
+            get { return strength; }
+            set { strength = value; }
         }
 
-        public void SetStrength(int strength)
+        public int Ap
         {
-            this.strength = strength;
+            get { return ap; }
+            set { ap = value; }
         }
 
-        public int GetStrength()
+        // metody leczenie i obrazenia nie działają!! 20.09.2022
+        public int Leczenie(int wartoscLeczenia)
         {
-            return strength;
+            return Hp + wartoscLeczenia;
         }
 
-        public void SetAp(int ap)
+        public int Obrazenia(int wartoscObrazen)
         {
-            this.ap = ap;
+            return Hp - wartoscObrazen;
         }
-
-        public int GetAp()
-        {
-            return ap;
-        }
-
-
         public Hero() { }
 
         public Hero(string name, int hp, int strength)
@@ -84,39 +72,6 @@ namespace Zadaniegra
             Console.WriteLine($"{name} {hp} {strength}");
         }
 
-        public void leczenie(int leczenie)
-        {
-            int wyleczone = GetHp() + leczenie;
-            SetHp(wyleczone);
-        }
 
-        public void obrazenia(int obrazenia)
-        {
-            int otrzymaneObrazenia = GetHp() - obrazenia;
-            SetHp(otrzymaneObrazenia);
-        }
     }
-    class Warrior : Hero
-    {
-        public Warrior()
-        {
-            SetName("Geralt");
-            SetHp(100);
-            SetStrength(50);
-            Console.WriteLine($"Imie: {GetName()}, Punkty życia: {GetHp()}, Siła: {GetStrength()}");
-        }
-    }
-
-    class Mage : Hero
-    {
-        public Mage()
-        {
-            SetName("Xardas");
-            SetHp(100);
-            SetStrength(20);
-            SetAp(40);
-            Console.WriteLine($"Imie: {GetName()}, Punkty życia: {GetHp()}, Siła: {GetStrength()}, Moc magiczna {GetAp()}");
-        }
-    }
-
 }
