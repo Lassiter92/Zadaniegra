@@ -16,6 +16,8 @@ namespace Zadaniegra
             Strength = 3;
             Ap = 16;
             Console.WriteLine($"Imie: {Name}, Punkty życia: {Hp}, Siła: {Strength}, Moc magiczna {Ap}");
+
+           
         }
     }
 }

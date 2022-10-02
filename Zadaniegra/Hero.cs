@@ -42,15 +42,17 @@
             set { ap = value; }
         }
 
-        // metody leczenie i obrazenia nie działają!! 20.09.2022
+
         public int Leczenie(int wartoscLeczenia)
         {
-            return Hp + wartoscLeczenia;
+            Hp = Hp + wartoscLeczenia;
+            return Hp;
         }
 
         public int Obrazenia(int wartoscObrazen)
         {
-            return Hp - wartoscObrazen;
+            Hp = Hp - wartoscObrazen;
+            return Hp;
         }
         public Hero() { }
 
@@ -69,7 +71,7 @@
             this.hp = hp;
             this.strength = strength;
             this.ap = ap;
-            Console.WriteLine($"{name} {hp} {strength}");
+            Console.WriteLine($"Imie: {name}, Punkty życia: {hp}, Siła: {strength}, Moc magiczna: {ap}");
         }
 
 
