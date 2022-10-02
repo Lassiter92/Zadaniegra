@@ -18,6 +18,7 @@
             get { return hp; }
             set
             {
+                hp = value;
                 if (hp > 100)
                 {
                     hp = 100;
@@ -26,7 +27,7 @@
                 {
                     hp = 0;
                 }
-                hp = value;
+                
             }
         }
 
@@ -58,20 +59,20 @@
 
         public Hero(string name, int hp, int strength)
         {
-            this.name = name;
-            this.hp = hp;
-            this.strength = strength;
-            Console.WriteLine($"Imie: {name}, Punkty życia: {hp}, Siła: {strength}");
+            Name = name;
+            Hp = hp;
+            Strength = strength;
+            Console.WriteLine($"Imie: {Name}, Punkty życia: {Hp}, Siła: {Strength}");
         }
 
 
         public Hero(string name, int hp, int strength, int ap)
         {
-            this.name = name;
-            this.hp = hp;
-            this.strength = strength;
-            this.ap = ap;
-            Console.WriteLine($"Imie: {name}, Punkty życia: {hp}, Siła: {strength}, Moc magiczna: {ap}");
+            Name = name;
+            Hp = hp;
+            Strength = strength;
+            Ap = ap;
+            Console.WriteLine($"Imie: {Name}, Punkty życia: {Hp}, Siła: {Strength}, Moc magiczna: {Ap}");
         }
 
 
