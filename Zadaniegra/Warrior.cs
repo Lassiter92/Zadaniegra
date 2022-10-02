@@ -10,9 +10,10 @@ namespace Zadaniegra
     {
         public Warrior()
         {
+
             Name = "Geralt";
             Hp = 100;
-            Strength = 15;
+            Strength = rnd.Next(3, 19); // Siła w przedziale 3k6 (3-18)
             Console.WriteLine($"Imie: {Name}, Punkty życia: {Hp}, Siła: {Strength}");
         }
     }

@@ -7,6 +7,8 @@
         private int strength;
         private int ap;
 
+        public Random rnd = new Random();
+
         public string Name
         {
             get { return name; }
@@ -27,7 +29,7 @@
                 {
                     hp = 0;
                 }
-                
+
             }
         }
 
