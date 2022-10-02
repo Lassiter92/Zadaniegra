@@ -8,8 +8,11 @@
             Mage mage = new Mage();
             Hero hero = new Hero("Sekiro", 100, 70);
 
-            hero.Obrazenia(40);
-            warrior.Obrazenia(7);
+            hero.Obrazenia(10);
+            warrior.Obrazenia(99);
+
+            mage.ShowDmg();
+            warrior.ShowDmg();
 
 
         }

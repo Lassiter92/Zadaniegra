@@ -11,7 +11,13 @@
             Ap = rnd.Next(2, 13); // Moc magiczna w przedziale 2k6 (2-12)
             Console.WriteLine($"Imie: {Name}, Punkty życia: {Hp}, Siła: {Strength}, Moc magiczna {Ap}");
 
-
         }
+        public void ShowDmg()
+        {
+            int dmg = (Ap + Strength) * Hp;
+            Console.WriteLine($"Siła ataku maga: {dmg}");
+        }
+
+
     }
 }
